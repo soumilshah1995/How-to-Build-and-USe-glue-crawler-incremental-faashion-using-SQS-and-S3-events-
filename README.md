@@ -206,35 +206,5 @@ SQS QUEUE POLICY
     ]
 }
 
-
-
-
-POLICY  TEMPALTE
-
-{
-    "Version": "2012-10-17",
-    "Id": "example-ID",
-    "Statement": [
-        {
-            "Sid": "example-statement-ID",
-            "Effect": "Allow",
-            "Principal": {
-                "Service": "s3.amazonaws.com"
-            },
-            "Action": [
-                "SQS:SendMessage"
-            ],
-            "Resource": "<QUEUE ARN>",
-            "Condition": {
-                "ArnLike": {
-                    "aws:SourceArn": "arn:aws:s3:*:*:<BUCKET>"
-                },
-                "StringEquals": {
-                    "aws:SourceAccount": "<AWS ACCOUNT>"
-                }
-            }
-        }
-    ]
-}
 """
 ```
